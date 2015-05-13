@@ -86,17 +86,18 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 	
 --Keys to activate the various powers
 	GLOBAL.TUNING.ORION.BLASTERCYCLEFIREMODEKEY = GetModConfigData("key-cycle") or 93
+	GLOBAL.TUNING.ORION.BLASTERCYCLEFIREMODEREVERSEKEY = GetModConfigData("key-cycle-reverse") or 91
 	
 --All the Functions
 	
-	--Cycle Fire mode
+	--Lines to say while cycling fire
 	local cycleblasterblaster = "Vanilla blasting"
 	local cycleblasterstun = "Set blaster to stun"
 	local cycleblasterincinerate = "Fire time"
 	local cycleblasterovercharge = "Oh, you guys in trouble now!"
-	local duration = 1
 	
-		local function cyclefireFn(inst)
+	--Cycle Fire mode
+	local function cyclefireFn(inst)
 	--If you are a ghost, just go back, lol
 		if inst:HasTag("playerghost") then return end
 		
@@ -136,10 +137,54 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 			return			
 			
 		end	
+	end
+	
+	--Reverse Cycle Fire mode, like before, but in reverse
+	local function cyclefirereverseFn(inst)
+	--If you are a ghost, just go back, lol
+		if inst:HasTag("playerghost") then return end
+		
+	--Cycle from blaster > overcharge > incinerate > stun
+		if inst.blasterblaster then 
+		
+			inst.blasterblaster = false
+			inst.blasterovercharge = true
+			inst.components.talker:Say(cycleblasterovercharge)
+			return			
+			
 		end
+		
+		if inst.blasterovercharge then 
+		
+			inst.blasterovercharge = false
+			inst.blasterincinerate = true
+			inst.components.talker:Say(cycleblasterincinerate)
+			return			
+			
+		end
+		
+		if inst.blasterincinerate then 
+		
+			inst.blasterincinerate = false
+			inst.blasterstun = true
+			inst.components.talker:Say(cycleblasterstun)
+			return			
+			
+		end
+		
+		if inst.blasterstun then 
+		
+			inst.blasterstun = false
+			inst.blasterblaster = true
+			inst.components.talker:Say(cycleblasterblaster)
+			return			
+			
+		end	
+	end
 
 --Key to Function linkers
 	AddModRPCHandler("Orion", "CYCLEFIRE", cyclefireFn)
+	AddModRPCHandler("Orion", "CYCLEFIREREVERSE", cyclefirereverseFn)
 
 
 AddMinimapAtlas("images/map_icons/orion.xml")

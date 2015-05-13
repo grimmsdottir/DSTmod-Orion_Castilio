@@ -58,6 +58,7 @@ local common_postinit = function(inst)
 --Initiate Key readers
 	inst:AddComponent("keyhandler")
 	inst.components.keyhandler:AddActionListener("Orion", TUNING.ORION.BLASTERCYCLEFIREMODEKEY, "CYCLEFIRE")
+	inst.components.keyhandler:AddActionListener("Orion", TUNING.ORION.BLASTERCYCLEFIREMODEREVERSEKEY, "CYCLEFIREREVERSE")
 	
 --Set states
 	inst.blasterblaster = true
