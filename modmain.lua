@@ -1,8 +1,16 @@
 PrefabFiles = {
 	"orion",
+	
+	"item_battery",	
+	"item_battery_charged",	
+	
+	"item_blaster",	
+	
 }
 
 Assets = {
+
+--Orion's assets
     Asset( "IMAGE", "images/saveslot_portraits/orion.tex" ),
     Asset( "ATLAS", "images/saveslot_portraits/orion.xml" ),
 
@@ -23,6 +31,10 @@ Assets = {
 	
 	Asset( "IMAGE", "images/avatars/avatar_ghost_orion.tex" ),
     Asset( "ATLAS", "images/avatars/avatar_ghost_orion.xml" ),
+	
+--Battery assets
+	Asset( "IMAGE", "images/inventoryimages/item_battery.tex" ),
+    Asset( "ATLAS", "images/inventoryimages/item_battery.xml" ),
 
 }
 
@@ -50,6 +62,84 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 	REVIVER = "Orion, friend of ghosts.",
 	GHOST = "Orion could use a heart.",
 }
+
+--Item names and descriptions
+
+	GLOBAL.STRINGS.NAMES.ITEM_BATTERY = "Battery"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BATTERY = "An odd little device."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_BATTERY = "A miniature thermal micro-fusion battery. This needs to be charged at a fire."
+	
+	GLOBAL.STRINGS.NAMES.ITEM_BATTERY_CHARGED = "Charged Battery"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BATTERY_CHARGED = "An odd, hot little device."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_BATTERY_CHARGED = "A powered battery, the lifeblood of a Ranger."
+	
+	GLOBAL.STRINGS.NAMES.ITEM_BLASTER = "Blasting Stick"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BLASTER = "A staff of unbeknownst magic."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_BLASTER = "My trusty stick, never leave home without it."
+
+--Declare Tunings
+	GLOBAL.TUNING.ORION = {}
+
+--General Tunings their values
+	GLOBAL.TUNING.ORION.BATTERYSTACKSIZE = TUNING.STACK_SIZE_SMALLITEM
+	GLOBAL.TUNING.ORION.BATTERYLIFE = TUNING.PERISH_SUPERFAST
+	
+--Keys to activate the various powers
+	GLOBAL.TUNING.ORION.BLASTERCYCLEFIREMODEKEY = GetModConfigData("key-cycle") or 93
+	
+--All the Functions
+	
+	--Cycle Fire mode
+	local cycleblasterblaster = "Vanilla blasting"
+	local cycleblasterstun = "Set blaster to stun"
+	local cycleblasterincinerate = "Fire time"
+	local cycleblasterovercharge = "Oh, you guys in trouble now!"
+	local duration = 1
+	
+		local function cyclefireFn(inst)
+	--If you are a ghost, just go back, lol
+		if inst:HasTag("playerghost") then return end
+		
+	--Cycle from blaster > stun > incinerate > overcharge
+		if inst.blasterblaster then 
+		
+			inst.blasterblaster = false
+			inst.blasterstun = true
+			inst.components.talker:Say(cycleblasterstun)
+			return			
+			
+		end
+		
+		if inst.blasterstun then 
+		
+			inst.blasterstun = false
+			inst.blasterincinerate = true
+			inst.components.talker:Say(cycleblasterincinerate)
+			return			
+			
+		end
+		
+		if inst.blasterincinerate then 
+		
+			inst.blasterincinerate = false
+			inst.blasterovercharge = true
+			inst.components.talker:Say(cycleblasterovercharge)
+			return			
+			
+		end
+		
+		if inst.blasterovercharge then 
+		
+			inst.blasterovercharge = false
+			inst.blasterblaster = true
+			inst.components.talker:Say(cycleblasterblaster)
+			return			
+			
+		end	
+		end
+
+--Key to Function linkers
+	AddModRPCHandler("Orion", "CYCLEFIRE", cyclefireFn)
 
 
 AddMinimapAtlas("images/map_icons/orion.xml")

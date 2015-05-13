@@ -34,15 +34,38 @@ local assets = {
         Asset( "ANIM", "anim/orion.zip" ),
         Asset( "ANIM", "anim/ghost_orion_build.zip" ),
 }
-local prefabs = {}
+local prefabs = {
+	
+	"item_battery",
+	"item_battery_charged",
+	
+	"item_blaster",
+}
 local start_inv = {
-	-- Custom starting items
+
+	"item_battery_charged",
+	"item_battery_charged",
+	"item_battery_charged",
+	
+	"item_blaster",
 }
 
 -- This initializes for both clients and the host
 local common_postinit = function(inst) 
-	-- Minimap icon
+-- Minimap icon
 	inst.MiniMapEntity:SetIcon( "orion.tex" )
+	
+--Initiate Key readers
+	inst:AddComponent("keyhandler")
+	inst.components.keyhandler:AddActionListener("Orion", TUNING.ORION.BLASTERCYCLEFIREMODEKEY, "CYCLEFIRE")
+	
+--Set states
+	inst.blasterblaster = true
+	inst.blasterstun = false
+	inst.blasterincinerate = false
+	inst.blasterovercharge = false
+	
+	
 end
 
 -- This initializes for the host only
