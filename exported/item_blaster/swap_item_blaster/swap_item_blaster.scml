@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
     <folder id="0" name="swap_item_blaster">
-        <file id="0" name="swap_item_blaster/swap_item_blaster.png" width="150" height="194" pivot_x="0.55298" pivot_y="0.571795"/>
+        <file id="0" name="swap_item_blaster/swap_item_blaster.png" width="250" height="324" pivot_x="0.525092" pivot_y="0.584103"/>
     </folder>
     <entity id="0" name="swap_item_blaster">
         <animation id="0" name="BUILD" length="1000">
             <mainline>
                 <key id="0">
-                    <object_ref id="0" name="swap_item_blaster" folder="0" file="0" abs_x="28.94702" abs_y="45.928205" abs_pivot_x="0.55298" abs_pivot_y="0.571795" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="0" name="swap_item_blaster" folder="0" file="0" abs_x="21.974908" abs_y="49.915897" abs_pivot_x="0.525092" abs_pivot_y="0.584103" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="swap_item_blaster">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="28.94702" y="45.928205"/>
+                    <object folder="0" file="0" x="21.974908" y="49.915897" angle="0"/>
                 </key>
             </timeline>
         </animation>
