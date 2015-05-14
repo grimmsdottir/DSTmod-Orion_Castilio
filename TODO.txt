@@ -1,0 +1,99 @@
+Orion the Space Ranger
+
+Basic Lore
+
+	A lost Ranger on an alien planet, many of the things that grow in the world are incompatible with her biology, which makes it difficult
+	to find nutrition. As such, she is unable to eat any raw or cooked foods, crockpot recipes, or even use honey poultices or healing salves. 
+	Booster shots are pretty alright though.
+
+Base Stats
+
+	Health: 150
+	Sanity: 150
+	Hunger: 150
+	
+	Speed: 1 Wilson
+	Hunger rate: 1 Wilson
+	
+Starting Items
+
+	Uncharged Battery x 3
+	Blasting Stick
+	Flare x 1
+	Nutri-bar x 3
+	
+Custom Items
+
+	Uncharged Battery
+		
+		The basis for many of Orion's suit function. It needs to be charged by "cooking" it at a fire first.
+		
+		Crafted from 3 Electrical Doodads and 1 Thermal Stone
+		
+	Charged Battery
+	
+		An actually functional battery, which allows Orion to use her suit functions, as well as power her blaster. They do however can and will
+		"spoil", decharging to become an Uncharged Battery again. Using Charged Batteries give you back Uncharged Batteries.
+		
+		Obtained by cooking Uncharged Batteries
+		Alternatively, in a pinch, you can craft them from 1 Uncharged Battery and 1 Torch
+		
+	Flare
+		
+		A handy item, when equipped in the hand, it will burn and activate, releasing light. However, it will then immidietly start to decay. It
+		can be left on the floor to allow the hands to be free to work things
+		
+		Crafted from 1 Flint, 1 Manure and 1 Reed
+		
+	Nutri-bar
+	
+		The only thing on that Orion can eat. 
+		
+		Crafter from 1 Nitre and 1 Wet Goop
+	
+	Blasting Stick
+	
+		Orion's handy Blaster. By itself, it increases the user's movement speed, just like the Walking Stick. Besides that, it can also be used 
+		as a ranged weapon. It has 5 modes which you can cycle through with "[" and "]".
+		
+			Vanilla Blaster	
+				This is the standard firing mode. It uses 3 Charged Batteries and deals 60 damage to an enemy
+			Stun
+				This can be used to stun enemeies and send them to sleep. It is only as strong as the Pan Flute, but single target. Uses 2
+				Charged Batteries. Sleeping rabbits and birds can be trapped by placing a trap directly ontop of them. Moles can be captured with a hammer.
+			Incinerate
+				This sets anything on fire. It can also relight fire pits. Uses 2 Charged Batteries
+			Overcharge
+				This will use all Charged Batteries you have, as well as permanently consuming one Battery, to deal heavy damage to a single target.
+				It deals (60 + (30 * (All your Batteries - 3))) damage. It requires at least 3 Charged Batteries
+			Disintegrate
+				This will smash a tree or rock to smithereens, which is a heck of a lot faster than bashing it down. Uses 3 Charged Batteries
+				
+Suit Powers
+Orion's suit also has a host of functions, but they require batteries to operate.
+
+	Lights- Activated with the "L" Key
+		
+		For 3 in game hours, you will emit a pretty strong light, allowing you to work through the night.
+		Uses 1 Charged Battery
+		
+	Jetpack-  Activated with the "R" Key
+	
+		Activating it allows you to teleport to a nearby location quickly
+		Uses 2 Charged Batteries
+		
+	Heat Up- Activated with the "," Key
+	
+		Activating it heats you and nearby characters up to 35 degrees. It only lasts half an ingame hour. It does not heat you up very fast
+		Uses 3 Charged Batteries
+		
+	Cool Down- Activated with the "." Key
+	
+		Activating it chills you and nearby characters down to 20 degrees. It only lasts half an ingame hour. It does not cool you down very fast
+		Uses 3 Charged Batteries
+		
+Upgrades
+You can craft upgrades to yourself to make yourself better
+		
+	
+	

@@ -46,6 +46,9 @@ local start_inv = {
 	"item_battery_charged",
 	"item_battery_charged",
 	"item_battery_charged",
+	"item_battery_charged",
+	"item_battery_charged",
+	"item_battery_charged",
 	
 	"item_blaster",
 }
@@ -58,15 +61,22 @@ local common_postinit = function(inst)
 --Initiate Key readers
 	inst:AddComponent("keyhandler")
 	inst.components.keyhandler:AddActionListener("Orion", TUNING.ORION.BLASTERCYCLEFIREMODEKEY, "CYCLEFIRE")
-	inst.components.keyhandler:AddActionListener("Orion", TUNING.ORION.BLASTERCYCLEFIREMODEREVERSEKEY, "CYCLEFIREREVERSE")
 	
 --Set states
 	inst.blasterblaster = true
 	inst.blasterstun = false
-	inst.blasterincinerate = false
-	inst.blasterovercharge = false
+
+--Set Battery states
+	inst.batteriesnum = 0
 	
+--Set Blaster stats
+	inst.blasterblasterdamage = 60
+	inst.blasterblastercost = 3
+	inst.blasterstunpower = 1
+	inst.blasterstuncost = 2
 	
+--Set Upgrade stats
+	inst.blasterbattefficiency = 0
 end
 
 -- This initializes for the host only
