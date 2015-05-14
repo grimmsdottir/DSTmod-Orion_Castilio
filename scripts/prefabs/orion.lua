@@ -40,6 +40,7 @@ local prefabs = {
 	"item_battery_charged",
 	
 	"item_nutribar",
+	"meat",
 	
 	"item_blaster",
 }
@@ -57,6 +58,8 @@ local start_inv = {
 	"item_nutribar",
 	"item_nutribar",
 	"item_nutribar",
+	
+	"meat",
 	
 	"item_blaster",
 }

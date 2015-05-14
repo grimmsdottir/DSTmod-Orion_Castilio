@@ -83,7 +83,25 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BLASTER = "A staff of unbeknownst magic."
 	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_BLASTER = "My trusty stick, never leave home without it."
 	
+--Declare new foodgroup
 
+	GLOBAL.FOODTYPE.ORIONNUTRI = "ORIONNUTRI"
+	
+	GLOBAL.FOODGROUP.ORIONOMNI = 
+    {
+        name = "ORIONOMNI",
+        types =
+        {
+            GLOBAL.FOODTYPE.MEAT,
+            GLOBAL.FOODTYPE.VEGGIE,
+            GLOBAL.FOODTYPE.INSECT,
+            GLOBAL.FOODTYPE.SEEDS,
+            GLOBAL.FOODTYPE.GENERIC,
+            GLOBAL.FOODTYPE.ORIONNUTRI,
+        },
+    }
+	
+	
 --Declare Tunings
 	GLOBAL.TUNING.ORION = {}
 

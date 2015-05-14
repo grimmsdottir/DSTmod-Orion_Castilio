@@ -60,14 +60,15 @@ Custom Items
 				This is the standard firing mode. It uses 3 Charged Batteries and deals 60 damage to an enemy
 			Stun
 				This can be used to stun enemeies and send them to sleep. It is only as strong as the Pan Flute, but single target. Uses 2
-				Charged Batteries. Sleeping rabbits and birds can be trapped by placing a trap directly ontop of them. Moles can be captured with a hammer.
-			Incinerate
-				This sets anything on fire. It can also relight fire pits. Uses 2 Charged Batteries
-			Overcharge
-				This will use all Charged Batteries you have, as well as permanently consuming one Battery, to deal heavy damage to a single target.
-				It deals (60 + (30 * (All your Batteries - 3))) damage. It requires at least 3 Charged Batteries
-			Disintegrate
-				This will smash a tree or rock to smithereens, which is a heck of a lot faster than bashing it down. Uses 3 Charged Batteries
+				Charged Batteries. Sleeping rabbits and birds can be trapped by placing a trap directly ontop of them. Moles can be captured with a hammer.\
+			The bellow have been mothballed
+				Incinerate
+					This sets anything on fire. It can also relight fire pits. Uses 2 Charged Batteries
+				Overcharge
+					This will use all Charged Batteries you have, as well as permanently consuming one Battery, to deal heavy damage to a single target.
+					It deals (60 + (30 * (All your Batteries - 3))) damage. It requires at least 3 Charged Batteries
+				Disintegrate
+					This will smash a tree or rock to smithereens, which is a heck of a lot faster than bashing it down. Uses 3 Charged Batteries
 				
 Suit Powers
 Orion's suit also has a host of functions, but they require batteries to operate.
@@ -95,5 +96,26 @@ Orion's suit also has a host of functions, but they require batteries to operate
 Upgrades
 You can craft upgrades to yourself to make yourself better
 		
+		Upgrade Kit
+			
+			A simple intermideary ingredient required to craft all other upgrades.
+			Crafted from 1 Gear, 2 Doodads and 1 Paper
+		
+		Blaster Potency Upgrade
+		
+			Increases the power of the Vanila blaster by 30 damage, but also increase the battery cost by 1
+			Crafted from 1 Upgrade Kit and 1 Red Gem
+			Can be upgraded up to 10 times
+		
+		Blaster Stun Potency
+		
+			Increases the power of the stun blaster by 1 level, stunning enemies quicker, but also increase the battery cost by 1
+			Crafted from 1 Upgrade Kit and 1 Blue Gem
+			Can be upgraded up to 5 times
+			
+		Blaster Battery Efficiency
+		
+			Decreases the battery cost of both Vanila and Stun blaster modes by 1. The battery cost will never be less than 1
+			Crafted from 1 Upgrade Kit and 2 Charged Batteries
 	
 	
