@@ -4,6 +4,8 @@ PrefabFiles = {
 	"item_battery",	
 	"item_battery_charged",	
 	
+	"item_nutribar",	
+	
 	"item_blaster",	
 	
 }
@@ -73,9 +75,14 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BATTERY_CHARGED = "An odd, hot little device."
 	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_BATTERY_CHARGED = "A powered battery, the lifeblood of a Ranger."
 	
+	GLOBAL.STRINGS.NAMES.ITEM_NUTRIBAR = "Nutri-bar"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_NUTRIBAR = "A peculiar bar, can it even be eaten?"
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_NUTRIBAR = "A nutritious bar, just about the only thing on this planet remotely digestible"
+	
 	GLOBAL.STRINGS.NAMES.ITEM_BLASTER = "Blasting Stick"
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BLASTER = "A staff of unbeknownst magic."
 	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_BLASTER = "My trusty stick, never leave home without it."
+	
 
 --Declare Tunings
 	GLOBAL.TUNING.ORION = {}
