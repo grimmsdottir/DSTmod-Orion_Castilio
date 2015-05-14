@@ -42,6 +42,11 @@ local prefabs = {
 	"item_nutribar",
 	"meat",
 	
+	"up_kit",
+	"up_blaster",
+	"up_pow",
+	"up_stun",
+	
 	"item_blaster",
 }
 local start_inv = {
@@ -58,6 +63,11 @@ local start_inv = {
 	"item_nutribar",
 	"item_nutribar",
 	"item_nutribar",
+	
+	"up_kit",
+	"up_blaster",
+	"up_pow",
+	"up_stun",
 	
 	"meat",
 	
@@ -98,7 +108,7 @@ local master_postinit = function(inst)
 	inst.components.health:SetMaxHealth(150)
 	inst.components.hunger:SetMax(150)
 	inst.components.sanity:SetMax(200)
-	inst.components.eater:SetDiet({ FOODGROUP.ORIONOMNI }, { FOODTYPE.ORIONNUTRI })
+	inst.components.eater:SetDiet({ FOODGROUP.ORIONOMNI }, { FOODGROUP.ORIONUSABLE })
 end
 
 return MakePlayerCharacter("orion", prefabs, assets, common_postinit, master_postinit, start_inv)

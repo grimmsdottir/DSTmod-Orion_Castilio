@@ -6,6 +6,11 @@ PrefabFiles = {
 	
 	"item_nutribar",	
 	
+	"up_kit",
+	"up_blaster",
+	"up_pow",
+	"up_stun",
+	
 	"item_blaster",	
 	
 }
@@ -79,6 +84,10 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_NUTRIBAR = "A peculiar bar, can it even be eaten?"
 	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_NUTRIBAR = "A nutritious bar, just about the only thing on this planet remotely digestible"
 	
+	GLOBAL.STRINGS.NAMES.UP_KIT = "Upgrade Kit"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_KIT = "An odd rectangular box. It sounds like there are things inside."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_KIT = "An upgrade kit, needed to craft various upgrades for myself"
+	
 	GLOBAL.STRINGS.NAMES.ITEM_BLASTER = "Blasting Stick"
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BLASTER = "A staff of unbeknownst magic."
 	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_BLASTER = "My trusty stick, never leave home without it."
@@ -86,6 +95,9 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 --Declare new foodgroup
 
 	GLOBAL.FOODTYPE.ORIONNUTRI = "ORIONNUTRI"
+	GLOBAL.FOODTYPE.ORIONUPBLASTER = "ORIONUPBLASTER"
+	GLOBAL.FOODTYPE.ORIONUPPOW = "ORIONUPPOW"
+	GLOBAL.FOODTYPE.ORIONUPSTUN = "ORIONUPSTUN"
 	
 	GLOBAL.FOODGROUP.ORIONOMNI = 
     {
@@ -98,6 +110,21 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
             GLOBAL.FOODTYPE.SEEDS,
             GLOBAL.FOODTYPE.GENERIC,
             GLOBAL.FOODTYPE.ORIONNUTRI,
+			GLOBAL.FOODTYPE.ORIONUPBLASTER,
+			GLOBAL.FOODTYPE.ORIONUPPOW,
+			GLOBAL.FOODTYPE.ORIONUPSTUN,
+        },
+    }
+	
+	GLOBAL.FOODGROUP.ORIONUSABLE = 
+    {
+        name = "ORIONOMNI",
+        types =
+        {
+            GLOBAL.FOODTYPE.ORIONNUTRI,
+			GLOBAL.FOODTYPE.ORIONUPBLASTER,
+			GLOBAL.FOODTYPE.ORIONUPPOW,
+			GLOBAL.FOODTYPE.ORIONUPSTUN,
         },
     }
 	
@@ -147,4 +174,5 @@ AddMinimapAtlas("images/map_icons/orion.xml")
 
 -- Add mod character to mod character list. Also specify a gender. Possible genders are MALE, FEMALE, ROBOT, NEUTRAL, and PLURAL.
 AddModCharacter("orion", "FEMALE")
+
 
