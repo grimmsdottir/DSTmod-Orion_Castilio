@@ -23,9 +23,12 @@ local function fn(Sim)
 	inst.AnimState:PlayAnimation("idle")
 	
 	inst:AddComponent("edible")
-    inst.components.edible.hungervalue = TUNING.CALORIES_SMALL
-    inst.components.edible.healthvalue = TUNING.HEALING_MEDSMALL
-    inst.components.edible.sanityvalue = TUNING.SANITY_TINY
+	--heals 75 hunger
+    inst.components.edible.hungervalue = TUNING.CALORIES_HUGE
+	--heals 3 health
+    inst.components.edible.healthvalue = TUNING.HEALING_SMALL
+	---heals 15 sanity
+    inst.components.edible.sanityvalue = TUNING.SANITY_MED
     inst.components.edible.foodtype = "ORIONNUTRI"
 
     if not TheWorld.ismastersim then

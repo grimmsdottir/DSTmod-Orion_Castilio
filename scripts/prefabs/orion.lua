@@ -207,6 +207,58 @@ end
 			end
 			return
 		end
+		if food and food.components.edible and food.prefab == "nitre" then
+			--Orion's fav food is nitre, so it boosts the most sanity
+			--say something about food, maybe
+			inst.components.talker:Say("I ate nitre!")
+			--remove the old hunger bonus
+			inst.components.hunger:DoDelta(-2)
+			--give the new edibleness
+			inst.components.hunger:DoDelta(TUNING.CALORIES_MED)
+			inst.components.health:DoDelta(TUNING.HEALING_TINY)
+			inst.components.sanity:DoDelta(TUNING.SANITY_MED)
+			inst.HUD.controls.status.heart:PulseGreen()
+			inst.HUD.controls.status.heart:ScaleTo(1.3,1,.7)
+			inst.HUD.controls.status.brain:PulseGreen()
+			inst.HUD.controls.status.brain:ScaleTo(1.3,1,.7)
+			return
+		end
+		if food and food.components.edible and food.prefab == "rocks" then
+			--Orion's staple is rock, so it only restores hunger
+			--say something about food, maybe
+			inst.components.talker:Say("I ate rocks!")
+			--remove the old hunger bonus
+			inst.components.hunger:DoDelta(-1)
+			--give the new edibleness
+			inst.components.hunger:DoDelta(TUNING.CALORIES_MED)
+			return
+		end
+		if food and food.components.edible and food.prefab == "gold" then
+			--Gold restores health?
+			--say something about food, maybe
+			inst.components.talker:Say("I ate gold!")
+			--remove the old hunger bonus
+			inst.components.hunger:DoDelta(-2)
+			--give the new edibleness
+			inst.components.hunger:DoDelta(TUNING.CALORIES_MED)
+			inst.components.health:DoDelta(TUNING.HEALING_MEDLARGE)
+			inst.components.sanity:DoDelta(TUNING.SANITY_SUPERTINY)
+			inst.HUD.controls.status.heart:PulseGreen()
+			inst.HUD.controls.status.heart:ScaleTo(1.3,1,.7)
+			inst.HUD.controls.status.brain:PulseGreen()
+			inst.HUD.controls.status.brain:ScaleTo(1.3,1,.7)
+			return
+		end
+		if food and food.components.edible and food.prefab == "flint" then
+			--Flint is more or less the same as rock
+			--say something about food, maybe
+			inst.components.talker:Say("I ate flint!")
+			--remove the old hunger bonus
+			inst.components.hunger:DoDelta(-1)
+			--give the new edibleness
+			inst.components.hunger:DoDelta(TUNING.CALORIES_MED)
+			return
+		end
 	end
 
 -- This initializes for the host only
