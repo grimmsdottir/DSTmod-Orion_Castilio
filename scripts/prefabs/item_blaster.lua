@@ -19,10 +19,10 @@ local function onunequip(inst, owner)
 end
 
 --function to check the blaster's efficiency level
-local function calcBattEfficiency(cost)
+local function calcBattEfficiency(costdurr)
 
-	local i = cost - ThePlayer.blasterbattefficiency
-	if i < 1 then
+	local i = costdurr - ThePlayer.blasterbattefficiency
+	if i < 1 or i == 1 then
 		return 1
 	else
 		return i
@@ -89,7 +89,7 @@ local function onattack_blaster(inst, attacker, target, skipsanity)
 		end
 	elseif ThePlayer.blasterstun then
 	
-		if useandrecyclebatt(ThePlayer.blasterstuncost) then
+		if useandrecyclebatt(ThePlayer.blasterblastercost) then
 			ThePlayer.components.talker:Say("Night night!")
 			if target.components.sleeper ~= nil then
 				target.components.sleeper:AddSleepiness(ThePlayer.blasterstunpower, TUNING.PANFLUTE_SLEEPTIME)

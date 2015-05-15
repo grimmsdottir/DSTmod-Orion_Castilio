@@ -86,7 +86,19 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 	
 	GLOBAL.STRINGS.NAMES.UP_KIT = "Upgrade Kit"
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_KIT = "An odd rectangular box. It sounds like there are things inside."
-	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_KIT = "An upgrade kit, needed to craft various upgrades for myself"
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_KIT = "An upgrade kit, it contains nanomachines that can be used to upgrade my gear"
+	
+	GLOBAL.STRINGS.NAMES.UP_BLASTER = "Blaster Capacitor Upgrage Kit"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_BLASTER = "An odd rectangular box. It sounds like there are things inside."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_BLASTER = "This can be used to increase the power of my blasting stick's damage."
+	
+	GLOBAL.STRINGS.NAMES.UP_STUN = "Neural Stunning Amplification Kit"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_STUN = "An odd rectangular box. It sounds like there are things inside."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_STUN = "This can be used to increase the power of my blasting stick's stuns"
+	
+	GLOBAL.STRINGS.NAMES.UP_POW = "Power Efficiency Kit"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_POW = "An odd rectangular box. It sounds like there are things inside."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_POW = "This can be used to decrease the power cost of my blasting stick"
 	
 	GLOBAL.STRINGS.NAMES.ITEM_BLASTER = "Blasting Stick"
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BLASTER = "A staff of unbeknownst magic."
