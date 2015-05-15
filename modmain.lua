@@ -10,6 +10,10 @@ PrefabFiles = {
 	"up_blaster",
 	"up_pow",
 	"up_stun",
+	"up_health",
+	"up_hunger",
+	"up_sanity",
+	"up_speed",
 	
 	"item_blaster",	
 	
@@ -42,6 +46,9 @@ Assets = {
 --Battery assets
 	Asset( "IMAGE", "images/inventoryimages/item_battery.tex" ),
     Asset( "ATLAS", "images/inventoryimages/item_battery.xml" ),
+	
+	Asset( "IMAGE", "images/inventoryimages/item_battery_charged.tex" ),
+    Asset( "ATLAS", "images/inventoryimages/item_battery_charged.xml" ),
 
 }
 
@@ -100,9 +107,37 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_POW = "An odd rectangular box. It sounds like there are things inside."
 	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_POW = "This can be used to decrease the power cost of my blasting stick"
 	
+	GLOBAL.STRINGS.NAMES.UP_HEALTH = "Suit Plate Hardening Kit"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_HEALTH = "An odd rectangular box. It sounds like there are things inside."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_HEALTH = "This can be used to increase my general survivability"
+	
+	GLOBAL.STRINGS.NAMES.UP_HUNGER = "Metabolism Regulator Kit"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_HUNGER = "An odd rectangular box. It sounds like there are things inside."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_HUNGER = "This can be used to increase my nutritious longevity"
+	
+	GLOBAL.STRINGS.NAMES.UP_SANITY = "Nightmare Vision Kit"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_SANITY = "An odd rectangular box. It sounds like there are things inside."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_SANITY = "This can be used to pierce the nightmares of this place"
+	
+	GLOBAL.STRINGS.NAMES.UP_SPEED = "Exoskeletal Boost Kit"
+	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.UP_SPEED = "An odd rectangular box. It sounds like there are things inside."
+	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.UP_SPEED = "This can be used to go faster"
+	
 	GLOBAL.STRINGS.NAMES.ITEM_BLASTER = "Blasting Stick"
 	GLOBAL.STRINGS.CHARACTERS.GENERIC.DESCRIBE.ITEM_BLASTER = "A staff of unbeknownst magic."
 	GLOBAL.STRINGS.CHARACTERS.ORION.DESCRIBE.ITEM_BLASTER = "My trusty stick, never leave home without it."
+	
+	GLOBAL.STRINGS.RECIPE_DESC.ITEM_BATTERY = "A battery needed to power the Blasting Stick."
+	GLOBAL.STRINGS.RECIPE_DESC.ITEM_BATTERY_CHARGED = "An way to charge batteries in a pinch."
+	GLOBAL.STRINGS.RECIPE_DESC.ITEM_NUTRIBAR = "A deliciously wrapped bar of minerals."
+	GLOBAL.STRINGS.RECIPE_DESC.UP_KIT = "A case of nanomachines."
+	GLOBAL.STRINGS.RECIPE_DESC.UP_BLASTER = "Upgrades blaster damage."
+	GLOBAL.STRINGS.RECIPE_DESC.UP_STUN = "Upgrades stunning effectiveness."
+	GLOBAL.STRINGS.RECIPE_DESC.UP_POW = "Upgrades blaster efficiency."
+	GLOBAL.STRINGS.RECIPE_DESC.UP_HEALTH = "Upgrades health and durability."
+	GLOBAL.STRINGS.RECIPE_DESC.UP_HUNGER = "Upgrades hunger and metaboliism."
+	GLOBAL.STRINGS.RECIPE_DESC.UP_SANITY = "Upgrades sanity and terror."
+	GLOBAL.STRINGS.RECIPE_DESC.UP_SPEED = "Upgrades speed."
 	
 --Declare new foodgroup
 
@@ -110,12 +145,17 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 	GLOBAL.FOODTYPE.ORIONUPBLASTER = "ORIONUPBLASTER"
 	GLOBAL.FOODTYPE.ORIONUPPOW = "ORIONUPPOW"
 	GLOBAL.FOODTYPE.ORIONUPSTUN = "ORIONUPSTUN"
+	GLOBAL.FOODTYPE.ORIONUPHEALTH = "ORIONUPHEALTH"
+	GLOBAL.FOODTYPE.ORIONUPHUNGER = "ORIONUPHUNGER"
+	GLOBAL.FOODTYPE.ORIONUPSANITY = "ORIONUPSANITY"
+	GLOBAL.FOODTYPE.ORIONUPSPEED = "ORIONUPSPEED"
 	
 	GLOBAL.FOODGROUP.ORIONOMNI = 
     {
         name = "ORIONOMNI",
         types =
         {
+			GLOBAL.FOODTYPE.ELEMENTAL,
             GLOBAL.FOODTYPE.MEAT,
             GLOBAL.FOODTYPE.VEGGIE,
             GLOBAL.FOODTYPE.INSECT,
@@ -125,18 +165,27 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 			GLOBAL.FOODTYPE.ORIONUPBLASTER,
 			GLOBAL.FOODTYPE.ORIONUPPOW,
 			GLOBAL.FOODTYPE.ORIONUPSTUN,
+			GLOBAL.FOODTYPE.ORIONUPHEALTH,
+			GLOBAL.FOODTYPE.ORIONUPHUNGER,
+			GLOBAL.FOODTYPE.ORIONUPSANITY,
+			GLOBAL.FOODTYPE.ORIONUPSPEED,
         },
     }
 	
 	GLOBAL.FOODGROUP.ORIONUSABLE = 
     {
-        name = "ORIONOMNI",
+        name = "ORIONUSABLE",
         types =
         {
+			GLOBAL.FOODTYPE.ELEMENTAL,
             GLOBAL.FOODTYPE.ORIONNUTRI,
 			GLOBAL.FOODTYPE.ORIONUPBLASTER,
 			GLOBAL.FOODTYPE.ORIONUPPOW,
 			GLOBAL.FOODTYPE.ORIONUPSTUN,
+			GLOBAL.FOODTYPE.ORIONUPHEALTH,
+			GLOBAL.FOODTYPE.ORIONUPHUNGER,
+			GLOBAL.FOODTYPE.ORIONUPSANITY,
+			GLOBAL.FOODTYPE.ORIONUPSPEED,
         },
     }
 	
@@ -151,6 +200,24 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 --Keys to activate the various powers
 	GLOBAL.TUNING.ORION.BLASTERCYCLEFIREMODEKEY = GetModConfigData("key-cycle") or 93
 	GLOBAL.TUNING.ORION.BLASTERCYCLEFIREMODEREVERSEKEY = GetModConfigData("key-cycle-reverse") or 91
+	
+--Recipes
+	--Batteries
+	AddRecipe("item_battery", {GLOBAL.Ingredient("heatrock", 1), GLOBAL.Ingredient("transistor", 4)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/item_battery.xml", "item_battery.tex" )
+	AddRecipe("item_battery_charged", {GLOBAL.Ingredient("item_battery", 1, "images/inventoryimages/item_battery.xml"), GLOBAL.Ingredient("torch", 1)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.NONE, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/item_battery_charged.xml", "item_battery_charged.tex" )
+	--Nutri-bar
+	AddRecipe("item_nutribar", {GLOBAL.Ingredient("rocks", 2), GLOBAL.Ingredient("goldnugget", 1)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_ONE, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/item_nutribar.xml", "item_nutribar.tex" )
+	--Upgrade Kit
+	AddRecipe("up_kit", {GLOBAL.Ingredient("transistor", 2), GLOBAL.Ingredient("papyrus", 2)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/up_kit.xml", "up_kit.tex" )
+	AddRecipe("up_blaster", {GLOBAL.Ingredient("up_kit", 1, "images/inventoryimages/up_kit.xml"), GLOBAL.Ingredient("redgem", 1)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/up_blaster.xml", "up_blaster.tex" )
+	AddRecipe("up_stun", {GLOBAL.Ingredient("up_kit", 1, "images/inventoryimages/up_kit.xml"), GLOBAL.Ingredient("bluegem", 1)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/up_stun.xml", "up_stun.tex" )
+	AddRecipe("up_pow", {GLOBAL.Ingredient("up_kit", 1, "images/inventoryimages/up_kit.xml"), GLOBAL.Ingredient("item_battery_charged", 2, "images/inventoryimages/item_battery_charged.xml")}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/up_pow.xml", "up_pow.tex" )
+	AddRecipe("up_health", {GLOBAL.Ingredient("up_kit", 1, "images/inventoryimages/up_kit.xml"), GLOBAL.Ingredient("cutstone", 3), GLOBAL.Ingredient("cutgrass", 6)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/up_health.xml", "up_health.tex" )
+	AddRecipe("up_hunger", {GLOBAL.Ingredient("up_kit", 1, "images/inventoryimages/up_kit.xml"), GLOBAL.Ingredient("nitre", 6)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/up_hunger.xml", "up_hunger.tex" )
+	AddRecipe("up_sanity", {GLOBAL.Ingredient("up_kit", 1, "images/inventoryimages/up_kit.xml"), GLOBAL.Ingredient("nightmarefuel", 3)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/up_sanity.xml", "up_sanity.tex" )
+	AddRecipe("up_speed", {GLOBAL.Ingredient("up_kit", 1, "images/inventoryimages/up_kit.xml"), GLOBAL.Ingredient("spear", 2)}, GLOBAL.RECIPETABS.REFINE, GLOBAL.TECH.SCIENCE_TWO, nil, nil, nil, nil, "orioncraftingtag", "images/inventoryimages/up_speed.xml", "up_speed.tex" )
+	
+	
 	
 --All the Functions
 	
@@ -178,6 +245,8 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.ORION =
 			return			
 		end
 	end
+	
+	
 --Key to Function linkers
 	AddModRPCHandler("Orion", "CYCLEFIRE", cyclefireFn)
 
